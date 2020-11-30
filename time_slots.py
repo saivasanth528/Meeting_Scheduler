@@ -31,5 +31,5 @@ class TimeSlot:
             # if the meeting occurs at same day
             return TimeSlot.time_slot_helper(calendar_object, start_time.day - 1, start_time_slot, end_time_slot, operation, slot_limit)
         else:
-            return TimeSlot.time_slot_helper(calendar_object, start_time.day - 1, start_time_slot, 1441, operation, slot_limit) and \
+            return TimeSlot.time_slot_helper(calendar_object, start_time.day - 1, start_time_slot, 1440, operation, slot_limit) and \
                    TimeSlot.time_slot_helper(calendar_object, end_time.day - 1, 0, end_time_slot, operation, slot_limit)
