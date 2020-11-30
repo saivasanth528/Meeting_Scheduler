@@ -20,7 +20,6 @@ class MeetingScheduler:
         for i in range(self.number_of_meeting_rooms):
             self.meeting_room_calendar_objects.append(MeetingRoomCalendar())
 
-
     def book(self, employee_id, start_time, end_time):
 
         if employee_id <= 0 or employee_id > self.number_of_employees:
@@ -49,8 +48,6 @@ class MeetingScheduler:
 
             print('All rooms busy for the given time interval')
 
-
-
     def cancel(self, employee_id, meeting_id):
 
         if meeting_id not in self.scheduled_meetings:
@@ -61,7 +58,10 @@ class MeetingScheduler:
         if current_meeting.organizer == employee_id:
             current_employee: EmployeeCalendar = self.employee_calendar_objects[employee_id - 1]
             current_employee.free_time_slots(current_meeting.start_time, current_meeting.end_time)
-            current_meeting.pop(meeting_id)
+            room_object: MeetingRoomCalendar = self.meeting_room_calendar_objects[ current_meeting.meeting_room_id]
+            room_object.free_time_slots(current_meeting.start_time, current_meeting.end_time)
+            self.scheduled_meetings.pop(meeting_id)
+            print("Meeting cancelled successfully")
         else:
             print('you are not the organizer of this meeting')
 

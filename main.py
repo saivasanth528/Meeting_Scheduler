@@ -94,6 +94,8 @@ if __name__ == '__main__':
                 employee_id = int(input("Enter the employee Id: "))
                 meeting_scheduler.book(employee_id, meeting_times[0], meeting_times[1])
         elif user_choice == 2:
-            pass
+            employee_id = int(input("Enter the employee Id "))
+            meeting_id = int(input("Enter the meeting Id "))
+            meeting_scheduler.cancel(employee_id, meeting_id)
         elif user_choice == 3:
             sys.exit()
