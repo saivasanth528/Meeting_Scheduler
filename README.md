@@ -1,11 +1,11 @@
 # Meeting_Scheduler
 Python Console Application for meeting scheduling
 
-Functionality that exposed  as-
+Functionality that exposed  as-\
 ● init_meeting_system(M, N)\
 ● Take 2 arguments -\
 ■ M - Number of meeting rooms\
-■ N - Number of employees\
+■ N - Number of employees
 
 ● book(employee_id, start_time, end_time)\
 ● if success, it prints the id of the room and id of the meeting itself\
@@ -22,15 +22,15 @@ have exceeded the max limit of bookings at a time'\
 ● cancel(employee_id, meeting_id)\
 ● if success, it prints 'success'\
 ● if this employee id is not the organiser of this meeting id, it prints 'you are not the\
-organizer of this meeting'\
+organizer of this meeting'
 
 
 
 NOTE: 
 1) The system will work eventhough we tried to schedule the meeting in the timespan which fell between two days.
-2) I assumed the working of system based on the current date only(static_dates) 
+2) I assumed the working of system based on the current date only(static_dates i.e from today to upcoming month) 
 3) Single threaded only
 
 
-![Alt text](https://drive.google.com/file/d/1nKWGb2AkkMDVBlfHMmWRODnjLhdnTGzU/view?usp=sharing "System design")
+![Design](https://github.com/saivasanth528/Meeting_Scheduler/blob/main/MeetingScheduler.jpg )
 
