@@ -5,7 +5,12 @@ from time_slots import TimeSlot
 
 
 class EmployeeCalendar(Calendar):
-    time_slots = 31 * [1440 * [0]]  # initializing the calendar for 31 days
+    NO_OF_DAYS = 31
+    NO_OF_MINUTES_IN_A_DAY = 1440
+
+    def __init__(self):
+
+        self.time_slots = self.NO_OF_DAYS * [self.NO_OF_MINUTES_IN_A_DAY * [0]]
 
     def is_time_slot_available(self, start_time: datetime.datetime, end_time: datetime.datetime):
 

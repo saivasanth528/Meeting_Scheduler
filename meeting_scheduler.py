@@ -20,6 +20,8 @@ class MeetingScheduler:
         for i in range(self.number_of_meeting_rooms):
             self.meeting_room_calendar_objects.append(MeetingRoomCalendar())
 
+        print("Employees and Rooms are successfully created")
+
     def book(self, employee_id, start_time, end_time):
 
         if employee_id <= 0 or employee_id > self.number_of_employees:
@@ -30,7 +32,7 @@ class MeetingScheduler:
         current_employee: EmployeeCalendar = self.employee_calendar_objects[employee_id-1]
 
         if current_employee.is_time_slot_available(start_time, end_time):
-
+            # checking if any of the room is available for the given time slots
             for room in range(0, len(self.meeting_room_calendar_objects)):
 
                 room_calendar_object = self.meeting_room_calendar_objects[room]
@@ -58,7 +60,7 @@ class MeetingScheduler:
         if current_meeting.organizer == employee_id:
             current_employee: EmployeeCalendar = self.employee_calendar_objects[employee_id - 1]
             current_employee.free_time_slots(current_meeting.start_time, current_meeting.end_time)
-            room_object: MeetingRoomCalendar = self.meeting_room_calendar_objects[ current_meeting.meeting_room_id]
+            room_object: MeetingRoomCalendar = self.meeting_room_calendar_objects[current_meeting.meeting_room_id]
             room_object.free_time_slots(current_meeting.start_time, current_meeting.end_time)
             self.scheduled_meetings.pop(meeting_id)
             print("Meeting cancelled successfully")
