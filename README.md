@@ -8,7 +8,7 @@ Functionality that exposed  as-
 ■ N - Number of employees\
 
 ● book(employee_id, start_time, end_time)\
-● if success, prints the id of the room and id of the meeting itself\
+● if success, it prints the id of the room and id of the meeting itself\
 ● If given time is beyond 1 month,is prints 'Cannot book beyond 1 month from
 today'\
 ● If meeting duration is more than 3 hrs, it prints 'Cannot book a meeting of more
@@ -26,4 +26,11 @@ organizer of this meeting'\
 
 
 
-NOTE: The system will work eventhough we tried to schedule the meeting in the timespan which fell between two days.
+NOTE: 
+1) The system will work eventhough we tried to schedule the meeting in the timespan which fell between two days.
+2) I assumed the working of system based on the current date only(static_dates) 
+3) Single threaded only
+
+
+![Alt text](https://drive.google.com/file/d/1nKWGb2AkkMDVBlfHMmWRODnjLhdnTGzU/view?usp=sharing "System design")
+
